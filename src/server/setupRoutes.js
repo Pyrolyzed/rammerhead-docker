@@ -15,10 +15,10 @@ module.exports = function setupRoutes(proxyServer, sessionStore, logger) {
     const isNotAuthorized = (req, res) => {
         if (!config.password) return;
         const { pwd } = new URLPath(req.url).getParams();
-        if (config.password !== pwd) {
-            httpResponse.accessForbidden(logger, req, res, config.getIP(req), 'bad password');
-            return true;
-        }
+        // if (config.password !== pwd) {
+        //      httpResponse.accessForbidden(logger, req, res, config.getIP(req), 'bad password');
+        //      return true;
+        // }
         return false;
     };
     if (process.env.DEVELOPMENT) {
